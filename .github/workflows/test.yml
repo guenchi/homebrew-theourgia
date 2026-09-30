@@ -19,9 +19,10 @@ jobs:
       - name: Install from this tap's formula
         run: |
           brew --version
-          brew install --build-from-source ./Formula/theourgia.rb
+          brew tap guenchi/theourgia "$GITHUB_WORKSPACE"
+          brew install --build-from-source guenchi/theourgia/theourgia
       - name: brew test
-        run: brew test ./Formula/theourgia.rb
+        run: brew test guenchi/theourgia/theourgia
       - name: Smoke
         run: |
           S="$RUNNER_TEMP/store"
