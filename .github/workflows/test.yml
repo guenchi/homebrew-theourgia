@@ -1,0 +1,33 @@
+name: test
+on:
+  push:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  install:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest, ubuntu-latest, ubuntu-24.04-arm]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Homebrew on PATH (Linux)
+        if: runner.os == 'Linux'
+        run: echo "/home/linuxbrew/.linuxbrew/bin" >> "$GITHUB_PATH"
+      - name: Install from this tap's formula
+        run: |
+          brew --version
+          brew install --build-from-source ./Formula/theourgia.rb
+      - name: brew test
+        run: brew test ./Formula/theourgia.rb
+      - name: Smoke
+        run: |
+          S="$RUNNER_TEMP/store"
+          theourgia init --store "$S"
+          theourgia insert --store "$S" --title "ci smoke" --text "hello"
+          theourgia outline --store "$S" --depth 1
+          theourgia search --store "$S" smoke
+          theourgia check --store "$S"
+          theourgia eval --store "$S" "(+ 1 2)"
