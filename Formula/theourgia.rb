@@ -1,16 +1,16 @@
 class Theourgia < Formula
   desc "Block store for agents and people: drafts and commits, code import, eval, MCP shell"
   homepage "https://github.com/guenchi/Theourgia"
-  url "https://github.com/guenchi/Theourgia/archive/refs/tags/v1.0.0.tar.gz"
-  sha256 "01f7eaf8bebcb83df38ea7674425747755708b552a7cfa575911d28caf737006"
+  url "https://github.com/guenchi/Theourgia/archive/refs/tags/v1.1.0.tar.gz"
+  sha256 "e4b67b3ba470bc9be131998abb1b9f258547e3bb899dec3f50e899979556fa4e"
   license "Apache-2.0"
 
   depends_on "chezscheme"
   depends_on "libuv"
 
   resource "igropyr" do
-    url "https://github.com/guenchi/Igropyr/archive/56ca0db9c8bb1c32bafa1e1472852a6186ada31b.tar.gz"
-    sha256 "5bfec8115942d0b66ae63923d2d908895b0c3ada1075ab4e72a0c49f3996828b"
+    url "https://github.com/guenchi/Igropyr/archive/1ef294c261121e6f98c8e8f500c90ac2aae5edc9.tar.gz"
+    sha256 "cd9f609ad7bc6d179c29919cdda20a1e0ca89ac3ea12095570b894b09e42ae42"
   end
 
   def install
