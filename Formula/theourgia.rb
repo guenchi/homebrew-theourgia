@@ -1,8 +1,8 @@
 class Theourgia < Formula
   desc "Block store for agents and people: drafts and commits, code import, eval, MCP shell"
   homepage "https://github.com/guenchi/Theourgia"
-  url "https://github.com/guenchi/Theourgia/archive/refs/tags/v1.3.1.tar.gz"
-  sha256 "b0d45943171f151a89c12b0daaff02d52f3908a43e809e41cf1bfade0d2385a2"
+  url "https://github.com/guenchi/Theourgia/archive/refs/tags/v1.3.2.tar.gz"
+  sha256 "c6cc90079e3f8a00f32825aaaf970118cb6cbfc5acae24dbb67b3929e337514e"
   license "Apache-2.0"
 
   depends_on "chezscheme"
